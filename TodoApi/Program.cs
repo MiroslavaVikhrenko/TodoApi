@@ -15,7 +15,7 @@ app.MapGet("/todoitems", async (TodoDb db) => await db.Todos.ToListAsync());
 
 app.MapGet("/todoitems/{id}", async (int id, TodoDb db) => await db.Todos.FindAsync(id));
 
-app.MapPost("/todoitems/{todo.Id}", async (TodoItem todo, TodoDb db) =>
+app.MapPost("/todoitems/", async (TodoItem todo, TodoDb db) =>
 {
     db.Todos.Add(todo);
     await db.SaveChangesAsync();
